@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   key: 'a833cb1d1e2c8013a43ca66c41d66b82',
-  endpoint: 'https://api.openweathermap.org/data/2.5/weather'
+  endpoint: 'https://api.openweathermap.org/data/2.5/'
 };
 
 /*
