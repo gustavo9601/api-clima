@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 
 //animacion
 import {loadingAnimation} from "src/app/animations/cargando.animation";
+import {CurrentWeatherService} from "src/app/services/current-weather.service";
 
 @Component({
   selector: 'app-cargando',
@@ -22,7 +23,7 @@ export class CargandoComponent implements OnInit {
   elements: string[] = this._elements;
 
 
-  constructor() {
+  constructor(public _currentWeatherService:CurrentWeatherService) {
   }
 
   ngOnInit() {

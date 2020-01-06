@@ -7,6 +7,7 @@ import {environment} from "src/environments/environment";
 import {Coords} from "src/app/structures/coords.structure";
 import {map} from "rxjs/internal/operators";
 import {Weather} from "src/app/structures/weather.structure";
+import {GeolocationService} from "src/app/services/geolocation.service";
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,8 @@ export class CurrentWeatherService {
   //aca es un observable
   public weather$: Observable<any>;
 
-  constructor(private http:HttpClient) {
+  constructor(private http:HttpClient, private _geolocationService:GeolocationService) {
+
 
     //Modfiicamos los valores retornados usando map, y mapeando la informacion que viene del servicio con la interface Weather
     this.weather$ = this.weatherSubject.asObservable().pipe(
@@ -41,12 +43,18 @@ export class CurrentWeatherService {
     ));
 
 
+    this._geolocationService.coords$.subscribe(
+      (coordenadas) => {
+        this.get(coordenadas);
+      }
+    )
+
     //this.getTest();
-    this.get({
-      lat: 4.710989,
-      lon: -74.072090
-    });
+    //this.get({ "lat": 4.5908874, "lon": -74.175885 });
   }
+
+
+
 
 
   getTest(){

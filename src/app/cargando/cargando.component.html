@@ -6,7 +6,7 @@ le pasamos por parametro la cantidad de veces a iterar
 -->
 
 
-<div [@cargandoAnimation]="elements.length">
+<div [@cargandoAnimation]="elements.length" *ngIf="!_currentWeatherService.weather$ | async">
   <div *ngFor="let color of elements"
        [ngStyle]="{'background-color': color}"
        class="circle">
