@@ -1,0 +1,35 @@
+<!--
+weahterService.weather$ | async as weatherObject
+
+accedemos a la variable observavle y con async se suscribe una sola ves al servcio
+as nameVariable   // con as podemos asignar en una variable de template el resultado por async
+
+*ngIf="weahterService.weather$ | async as weatherObject"
+-->
+<div class="card" *ngIf="weatherObject">
+  <div class="icon">
+    <!--Le pasamos la variable input [code]-->
+    <app-wather-icon [code]="weatherObject.cod"></app-wather-icon>
+  </div>
+  <div class="temp">
+    <div *ngIf="weatherObject.temp">
+      <p>Temperatura</p>
+      <p class="big">{{weatherObject.temp}}°</p>
+    </div>
+  </div>
+
+  <div class="low-temp" *ngIf="weatherObject.minMaxTemp">
+    {{weatherObject.minMaxTemp.min}} °
+    <span>Minima</span>
+  </div>
+  <div class="high-temp" *ngIf="weatherObject.minMaxTemp">
+    {{weatherObject.minMaxTemp.max}} °
+    <span>Maxima</span>
+  </div>
+
+  <div class="description">
+    <h2>{{weatherObject.name}}</h2>
+    <p>{{weatherObject.description}}</p>
+  </div>
+
+</div>

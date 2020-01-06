@@ -1,0 +1,14 @@
+
+<!--
+
+[@showUpStaggered]="(_forecastService.weather$  | async)?.length"
+[id de la animacion] = {cantidad de veces a iterar}
+
+"(_forecastService.weather$  | async)?.length"   usamos el ?.  con el ecual
+angular valida que lo que este al lado izquierdo se ejecute antes y de tener valores ejecuta los de la derecha
+para evitar valores nulos o undefined
+
+-->
+<div [@showUpCollection]="(_forecastService.weather$  | async)?.length">
+  <app-weather-card  [weatherObject]="weather"  *ngFor="let weather of _forecastService.weather$ | async"></app-weather-card>
+</div>

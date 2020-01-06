@@ -1,22 +1,9 @@
 <!--
-weahterService.weather$ | async as weatherObject
-
-accedemos a la variable observavle y con async se suscribe una sola ves al servcio
-as nameVariable   // con as podemos asignar en una variable de template el resultado por async
-
+[@showUpElement]  // llamando la animacion
 -->
-<div class="card" *ngIf="weahterService.weather$ | async as weatherObject">
-  <div class="icon">
-    <!--Le pasamos la variable input [code]-->
-    <app-wather-icon [code]="weatherObject.cod"></app-wather-icon>
-  </div>
-  <div class="temp">
-    <p>Temperatura</p>
-    <p class="big">{{weatherObject.temp}}°</p>
-  </div>
-  <div class="description">
-    <h2>{{weatherObject.name}}</h2>
-    <p>{{weatherObject.description}}</p>
-  </div>
+<app-weather-card
+  [@showUpElement]
+  [weatherObject]="_weatherService.weather$ | async" ></app-weather-card>
 
-</div>
+
+

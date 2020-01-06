@@ -1,0 +1,14 @@
+
+<!--
+[@cargandoAnimation]="elements.length"
+@cargandoAnimation  // id de animacion definida
+le pasamos por parametro la cantidad de veces a iterar
+-->
+
+
+<div [@cargandoAnimation]="elements.length">
+  <div *ngFor="let color of elements"
+       [ngStyle]="{'background-color': color}"
+       class="circle">
+  </div>
+</div>

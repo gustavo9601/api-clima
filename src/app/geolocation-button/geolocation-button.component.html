@@ -1,0 +1,5 @@
+
+<div *ngIf="!(_geolocationService.coords$ | async) || !active">
+  <button class="btn-borde" (click)="_geolocationService.requestGeolocation()">Activar mi ubicacion</button>  <!--Desde el boton se llama de una ves la funcion del servivcio-->
+  <p>Activa tu ubicacion para recibir los datos de clima para tu ciudad</p>
+</div>

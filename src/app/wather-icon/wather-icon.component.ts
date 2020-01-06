@@ -39,7 +39,7 @@ export class WatherIconComponent implements OnInit {
     if (this._code > 802) this.icon = "cloudy-day-3";
 
 
-    console.log("Code :" + this._code + " icono: " + this.icon )
+    //console.log("Code :" + this._code + " icono: " + this.icon )
   }
 
   constructor() {

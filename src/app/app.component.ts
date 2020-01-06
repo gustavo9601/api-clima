@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {GeolocationService} from "src/app/services/geolocation.service";
 
 
 @Component({
@@ -9,13 +10,11 @@ import {Component, OnInit} from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'app-clima';
 
-  constructor() {
-
+  constructor(private _geolocationService:GeolocationService) {
   }
 
+
   ngOnInit() {
-
-
   }
 
 }
